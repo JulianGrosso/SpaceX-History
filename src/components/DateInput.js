@@ -1,12 +1,13 @@
 import React from "react";
+import { StyleDateFilter } from "../style/styles";
 
 export default function DateInput(props) {
 	const { onChange, label } = props;
 
 	return (
-		<div className="date-input">
-			<label>{label}</label>
+		<StyleDateFilter>
 			<input type="date" onChange={onChange} />
-		</div>
+			<p>{label}</p>
+		</StyleDateFilter>
 	);
 }

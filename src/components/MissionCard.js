@@ -1,8 +1,9 @@
 import React from "react";
+import { StyledMissionCard } from "../style/styles";
 
 const cutDetails = (value) => {
-	if (value.length > 140) {
-		return value.slice(0, 137) + "...";
+	if (value.length > 180) {
+		return value.slice(0, 177) + "...";
 	} else {
 		return value;
 	}
@@ -14,10 +15,10 @@ export default function MissionCard(props) {
 	const details = cutDetails(mission.details);
 
 	return (
-		<div>
+		<StyledMissionCard>
 			<h3>{mission.title}</h3>
 			<div>Mission Date: {date.toLocaleDateString()}</div>
-			<p>Description: {details}</p>
-		</div>
+			<p>{details}</p>
+		</StyledMissionCard>
 	);
 }

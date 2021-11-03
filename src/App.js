@@ -1,9 +1,18 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import { fetchHistory } from "./api";
-import "./App.css";
 import DateInput from "./components/DateInput";
+import Footer from "./components/Footer";
+import Logo from "./components/Logo";
 import MissionCard from "./components/MissionCard";
+import {
+	GlobalStyle,
+	StyledMainSection,
+	StyledTitle,
+	StyledTitleSection,
+	StyledMissionSection,
+	StyleDateFilterContainer,
+} from "./style/styles";
 
 export default function App() {
 	const [startDate, setStartDate] = useState(null);
@@ -23,23 +32,32 @@ export default function App() {
 	}, [startDate, endDate]);
 
 	return (
-		<div>
-			<h1>The SpaceX History</h1>
-			<div>
-				<DateInput
-					label="Start Date"
-					onChange={(e) => setStartDate(e.target.value)}
-				/>
-				<DateInput
-					label="End Date"
-					onChange={(e) => setEndtDate(e.target.value)}
-				/>
-			</div>
-			<div>
-				{data.map((item, idx) => {
-					return <MissionCard key={idx} mission={item} />;
-				})}
-			</div>
-		</div>
+		<React.Fragment>
+			<GlobalStyle />
+			<StyledMainSection>
+				<StyledTitleSection>
+					<Logo />
+					<StyledTitle>SPACE-X HISTORICAL MILESTONES</StyledTitle>
+				</StyledTitleSection>
+				<StyleDateFilterContainer>
+					<p>DATE FILTER</p>
+					<DateInput
+						label="START DATE"
+						onChange={(e) => setStartDate(e.target.value)}
+					/>
+					<DateInput
+						label="END DATE"
+						onChange={(e) => setEndtDate(e.target.value)}
+					/>
+				</StyleDateFilterContainer>
+				<StyledMissionSection>
+					{data.map((item, idx) => {
+						return <MissionCard key={idx} mission={item} />;
+					})}
+				</StyledMissionSection>
+
+				<Footer />
+			</StyledMainSection>
+		</React.Fragment>
 	);
 }
