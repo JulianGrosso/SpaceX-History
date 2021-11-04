@@ -39,6 +39,7 @@ export default function App() {
 					<Logo />
 					<StyledTitle>SPACE-X HISTORICAL MILESTONES</StyledTitle>
 				</StyledTitleSection>
+
 				<StyleDateFilterContainer>
 					<p>DATE FILTER</p>
 					<DateInput
@@ -50,6 +51,7 @@ export default function App() {
 						onChange={(e) => setEndtDate(e.target.value)}
 					/>
 				</StyleDateFilterContainer>
+
 				<StyledMissionSection>
 					{data.map((item, idx) => {
 						return <MissionCard key={idx} mission={item} />;

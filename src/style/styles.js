@@ -1,5 +1,5 @@
 import styled, { createGlobalStyle } from "styled-components";
-import imgBackgroundTitle from "../assets/background-01.jpg";
+import imgBackgroundTitle from "../assets/background-01_comp.jpg";
 
 const device = {
 	xs: "max-width: 767px",
@@ -72,7 +72,7 @@ export const StyledLogo = styled.div`
 	margin-left: 6rem;
 
 	background-color: white;
-	padding: 2rem;
+	padding: 2rem 1.5rem 2rem 2rem;
 
 	@media screen and (${device.lg}) {
 		margin-left: 12rem;
@@ -96,6 +96,8 @@ export const StyledTitle = styled.h1`
 	margin-left: 6rem;
 
 	color: white;
+
+	user-select: none;
 
 	@media screen and (${device.lg}) {
 		margin-top: 18rem;
@@ -133,6 +135,8 @@ export const StyleDateFilterContainer = styled.div`
 	align-items: center;
 
 	border-bottom: solid 2px black;
+
+	user-select: none;
 
 	& p {
 		font-size: 2rem;
@@ -264,6 +268,8 @@ export const StyledFooter = styled.div`
 	align-items: center;
 	padding-top: 4rem;
 	padding-bottom: 4rem;
+
+	user-select: none;
 
 	& p {
 		font-size: 1rem;

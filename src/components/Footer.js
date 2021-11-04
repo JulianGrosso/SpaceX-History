@@ -5,6 +5,7 @@ import GitHubLogo from "../assets/github-logo.svg";
 export default function Footer() {
 	return (
 		<StyledFooter>
+			<p>⚛︎ This is my first ReactJS Web ⚛︎</p>
 			<p>Developed by Julian Grosso | 2021</p>
 			<StyledFooterA
 				href="https://github.com/JulianGrosso"
